@@ -1,0 +1,117 @@
+body {
+  margin: 20px;
+  font-family:  sans-serif;
+  text-align: center;
+  background-color: #999;
+}
+
+.toy {
+  position: relative;
+  margin: 5vmin auto;
+  width: 90vmin;
+}
+
+.ball {
+  position: relative;
+  border-radius: 50%;
+  width: 90vmin;
+  height: 90vmin;
+  overflow: hidden;
+  background: radial-gradient(circle at 30vmin 30vmin, #444, #000);
+}
+
+.answers {
+  width: 90vmin;
+  height: 90vmin;
+}
+
+.answer {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  left: 36vmin;
+  top: 34.6vmin;
+  width: 18vmin;
+  height: 20.8vmin;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  font-variant: small-caps;
+  font-size: 2.1vmin;
+  line-height: 2.4vmin;
+  opacity: 0;
+  transition: opacity 1s;
+  animation: floating 6s linear infinite;
+}
+
+.answer.show {
+  opacity: 1;
+}
+
+/* Triangle */
+.answer::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  border-left: 8.8vmin solid transparent;
+    border-right: 8.8vmin solid transparent;
+  border-radius: 0.4vmin;
+  width: 0.4vmin;
+    height: 0;
+}
+
+.answer.up::before {
+  top: 0.4vmin;
+    border-bottom: 15.2vmin solid #1c23e8;
+}
+
+.answer.down::before {
+  bottom: 0.4vmin;
+    border-top: 15.2vmin solid #1c23e8;
+}
+
+.answer::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: -7vmin;
+  top: -5vmin;
+  border-radius: 50%;
+  width: 32vmin;
+  height: 32vmin;
+  background: linear-gradient(to left, rgba(0,0,0,0.9), rgba(0,0,0,0));
+  animation: rotating 6s infinite linear;
+}
+
+.window {
+  position: absolute;
+  left: 22.5vmin;
+  top: 22.5vmin;
+  width: 45vmin;
+  height: 45vmin;
+  border-radius: 50%;
+  background: radial-gradient(#002, #001 18vmin, #666 18vmin, #000 18.5vmin, #000 22vmin, #666 22vmin, #000 22.5vmin);
+}
+
+@keyframes random {
+  to {
+    transform: translateY(-1710vmin);
+  }
+}
+
+@keyframes floating {
+  from {
+    transform: rotateZ(0) rotateY(15deg) translateZ(6.8vmin) rotateZ(0);
+  }
+  to {
+    transform: rotateZ(1turn) rotateY(15deg) translateZ(6.8vmin) rotateZ(-1turn);
+  }
+}
+
+@keyframes rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}
