@@ -1,4 +1,4 @@
-# React Web3 API Signed Request
+# Magic 8 Ball
 
 + Run command
     + npm install
