@@ -6,7 +6,7 @@ class App extends Component {
   state = { 
     web3: null,
     accounts: null,
-    contract: '0x8f04D88f2Ad9Dd3e4cC6d1bE4532fe91Fd81A519',
+    contract: '0x2981ADd3FCf386cAF59C39DeB9198Ca7BA98fd29',
     question: null,
     answer: null
   };
